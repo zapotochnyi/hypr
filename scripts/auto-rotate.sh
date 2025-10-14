@@ -10,29 +10,19 @@ monitor-sensor | while read -r line; do
             case "$ORIENTATION" in
                 "normal")
                     hyprctl keyword monitor ,transform,0
-                    hyprctl keyword device:wacom-hid-527e-pen:transform 0
-                    hyprctl keyword device:wacom-hid-527e-finger:transform 0
+                    hyprctl keyword input:touchdevice:transform 0
                     ;;
                 "right-up")
-                    # hyprctl keyword monitor ,transform,1
-                    # hyprctl keyword device:wacom-hid-527e-pen:transform 1
-                    # hyprctl keyword device:wacom-hid-527e-finger:transform 1
                     hyprctl keyword monitor ,transform,3
-                    hyprctl keyword device:wacom-hid-527e-pen:transform 3
-                    hyprctl keyword device:wacom-hid-527e-finger:transform 3
+                    hyprctl keyword input:touchdevice:transform 3
                     ;;
                 "bottom-up")
                     hyprctl keyword monitor ,transform,2
-                    hyprctl keyword device:wacom-hid-527e-pen:transform 2
-                    hyprctl keyword device:wacom-hid-527e-finger:transform 2
+                    hyprctl keyword input:touchdevice:transform 2
                     ;;
                 "left-up")
-                    # hyprctl keyword monitor ,transform,3
-                    # hyprctl keyword device:wacom-hid-527e-pen:transform 3
-                    # hyprctl keyword device:wacom-hid-527e-finger:transform 3
                     hyprctl keyword monitor ,transform,1
-                    hyprctl keyword device:wacom-hid-527e-pen:transform 1
-                    hyprctl keyword device:wacom-hid-527e-finger:transform 1
+                    hyprctl keyword input:touchdevice:transform 1
                     ;;
             esac
             PREVIOUS_ORIENTATION="$ORIENTATION"
